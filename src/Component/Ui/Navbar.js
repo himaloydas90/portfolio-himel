@@ -84,7 +84,7 @@ export default function Navbar() {
       {/* ---------- TOP BAR ---------- */}
       <nav className="sticky top-0 z-50 flex h-20 items-center justify-between border-b border-[#2a2d35] bg-[#13151a] px-4 sm:px-8">
         {/* Brand */}
-        <Link href="/Home">
+        <Link href="/#home">
           <img
             src="/logo.png"
             alt="Nordlight Logo"

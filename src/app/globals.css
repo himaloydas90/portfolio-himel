@@ -31,3 +31,11 @@ body {
 ::selection {
   @apply bg-amber-500/30;
 }
+.blog-marquee-slider .slick-track {
+  display: flex !important;
+  /* এর মাধ্যমে স্লাইডারের স্টপ-শেক এনিমেশন দূর হয়ে লিনিয়ার মোশন তৈরি হয় */
+}
+
+.blog-marquee-slider .slick-slide {
+  height: auto !important;
+}

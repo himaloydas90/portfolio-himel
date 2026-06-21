@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { FaCode, FaPalette, FaLightbulb, FaRocket } from 'react-icons/fa';
 
 const AboutSection = () => {
-  // Animation settings for smooth entry
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
@@ -17,7 +16,6 @@ const AboutSection = () => {
     visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
   };
 
-  // Memoized stats data for performance consistency
   const statistics = useMemo(() => [
     { number: "5+", label: "Years Experience" },
     { number: "100+", label: "Projects Completed" },
@@ -25,7 +23,6 @@ const AboutSection = () => {
     { number: "24/7", label: "Dedicated Support" }
   ], []);
 
-  // Memoized core values data
   const coreValues = useMemo(() => [
     { 
       icon: <FaCode className="text-amber-400 text-2xl" />, 
@@ -52,7 +49,6 @@ const AboutSection = () => {
   return (
     <main id='about' className="w-full min-h-screen text-white pt-[14vh] pb-20 overflow-hidden relative">
       
-      {/* Background Accent Glows */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
         <div className="absolute top-[20%] right-[-10%] w-[400px] h-[400px] rounded-full bg-orange-500/10 blur-[120px]" />
         <div className="absolute bottom-[10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-blue-500/10 blur-[140px]" />
@@ -60,48 +56,45 @@ const AboutSection = () => {
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 space-y-24">
         
-        {/* ─── SECTION 1: HERO BRIEF ─── */}
+        {/* SECTION 1: HERO BRIEF */}
         <motion.div 
           initial="hidden" animate="visible" variants={containerVariants}
           className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
         >
-          {/* 📱 মোবাইলে উপরে থাকবে (order-1) এবং 💻 ডেস্কটপে ডানপাশে যাবে (lg:order-2) */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left order-1 lg:order-2">
             <motion.span variants={fadeInUp} className="text-amber-400 font-mono text-sm tracking-wider uppercase font-semibold block">
               Our Story / Who I Am
             </motion.span>
-            <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-100">
-              Crafting Digital Spaces with <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
-                Purpose & Precision.
-              </span>
-            </motion.h1>
+            {/* Hero Brief Heading এর জন্য এই অংশটি ব্যবহার করুন */}
+<motion.h1 
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+  className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-100"
+>
+  Crafting Digital Spaces with <br />
+  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
+    Purpose & Precision.
+  </span>
+</motion.h1>
             <motion.p variants={fadeInUp} className="text-slate-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Hello! I am a passionate developer committed to bridging the gap between elegant UI design and powerhouse backend architecture. My journey started with a deep curiosity for how things work on the internet, which quickly evolved into a career creating fast, fluid enterprise applications.
-            </motion.p>
-            <motion.p variants={fadeInUp} className="text-slate-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Whether building custom component libraries, automating operations streams, or strategizing cloud scale structures, I prioritize clean documentation and high user retention over shortcuts.
+              Hello! I am a passionate developer committed to bridging the gap between elegant UI design and powerhouse backend architecture.
             </motion.p>
           </div>
 
-          {/* 📱 মোবাইলে নিচে নামবে (order-2) এবং 💻 ডেস্কটপে বামপাশে যাবে (lg:order-1) */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:col-span-5 flex justify-center order-2 lg:order-1"
           >
             <div className="relative w-72 h-72 sm:w-85 sm:h-85 rounded-2xl overflow-hidden border border-slate-800 p-3 bg-slate-900/40 backdrop-blur-md shadow-2xl group">
-              <Image 
-                src="/amit.png" alt="About Studio Workspace" fill priority
-                sizes="(max-width: 768px) 288px, 340px"
-                className="object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all duration-500 p-3"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent pointer-events-none" />
+              <Image src="/amit.png" alt="About Studio Workspace" fill priority className="object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all duration-500 p-3" />
             </div>
           </motion.div>
         </motion.div>
 
-        {/* ─── SECTION 2: METRICS COUNTER GRID ─── */}
+        {/* SECTION 2: METRICS */}
         <motion.div 
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
@@ -119,14 +112,34 @@ const AboutSection = () => {
           ))}
         </motion.div>
 
-        {/* ─── SECTION 3: CORE VALUES / PHILOSOPHY ─── */}
+        {/* SECTION 3: CORE VALUES / PHILOSOPHY */}
         <div className="space-y-12">
           <div className="text-center space-y-3">
-            <span className="text-orange-400 font-mono text-sm tracking-wider uppercase font-semibold block">
+            <motion.span 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-orange-400 font-mono text-sm tracking-wider uppercase font-semibold block"
+            >
               My Philosophy
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">The Core Pillars of My Work</h2>
-            <div className="w-16 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto rounded-full" />
+            </motion.span>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl sm:text-4xl font-bold tracking-tight"
+            >
+              The Core Pillars of My Work
+            </motion.h2>
+            <motion.div 
+              initial={{ width: 0, opacity: 0 }}
+              whileInView={{ width: 64, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto rounded-full" 
+            />
           </div>
 
           <motion.div 

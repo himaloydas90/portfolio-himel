@@ -66,7 +66,7 @@ const Hero = () => {
   const techStack = ['React', 'Next.js', 'Tailwind', 'Node.js', 'TypeScript'];
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden pt-[12vh]">
+    <section id='home' className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden pt-[12vh]">
       {/* Background Animated Ambient Light Loop */}
       <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
         <motion.div 
@@ -94,7 +94,7 @@ const Hero = () => {
           </motion.span>
           
           <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-100 min-h-[160px] sm:min-h-[180px] md:min-h-[220px]">
-            John Doe. <br />
+            Himel Das. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 inline-block relative pr-2">
               I am a {displayed}
               <span className="absolute right-0 bottom-1 w-[3px] h-[85%] bg-orange-400 animate-pulse ml-1" aria-hidden="true" />
