@@ -7,13 +7,13 @@ import { GiThunderBlade } from 'react-icons/gi';
 
 const projectsData = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A full-stack next-gen e-commerce with real-time payment gateway, admin panel, and analytics.',
-    tags: ['Next.js', 'Tailwind', 'MongoDB', 'Stripe'],
-    github: '#',
-    live: '#',
+    title: 'InOut - Daily Ledger',
+    description: 'A secured personal finance and transaction ledger application to track daily income, expenses, and savings with real-time analytics.',
+    tags: ['React', 'Redux Toolkit', 'Tailwind CSS', 'LocalStorage'],
+    github: 'https://github.com/himaloydas90/IN_OUT-PROJECT',
+    live: 'https://in-out-project.vercel.app/',
     icon: <Globe className="w-5 h-5 text-cyan-400" />,
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop'
+    image: '/inout.png'
   },
   {
     title: 'AI SaaS Dashboard',
